@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="UGainS: Uncertainty Guided Anomaly Instance Segmentation">
+  <meta name="keywords" content="UGainS, OoD, Anomaly, Anomaly Instance Segmentation, Semantic Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UGainS: Uncertainty Guided Anomaly Instance Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">UGainS</h1>
+          <h1 class="title is-2 publication-title">Uncertainty Guided Anomaly Instance Segmentation</h1>
+
+          <div class="column is-full_width">
+            <h2 class="title is-4">GCPR 2023</h2>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://nekrasov.dev">Alexey Nekrasov</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.vision.rwth-aachen.de/person/10/">Alexander Hermans</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/lars-kuhnert/">Lars Kuhnert</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.vision.rwth-aachen.de/person/10/">Bastian Leibe</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>RWTH Aachen University, </span>
+            <span class="author-block"><sup>2</sup>Ford Motor Company</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2308.02046"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kumuji/ugains"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Soon)</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+      <div class="hero-body">
+            <img src="github_teaser.jpg" class="center">
+            <br><br>
+            <h2 class="subtitle has-text-centered">
+          </h2>
+      </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>TL;DR: UGainS is an approach for the segmentation of anomaly instances in driving scenes.</b>
+          </p>
+          <p>
+            A single unexpected object on the road can cause an accident or may lead to injuries.
+            To prevent this, we need a reliable mechanism for finding anomalous objects on the road.
+            This task, called anomaly segmentation, can be a stepping stone to safe and reliable autonomous driving.
+          </p>
+          <p>
+            Current approaches tackle anomaly segmentation by assigning an anomaly score to each pixel and by grouping anomalous regions using simple heuristics.
+            However, pixel grouping is a limiting factor when it comes to evaluating the segmentation performance of individual anomalous objects.
+            To address the issue of grouping multiple anomaly instances into one, we propose an approach that produces accurate anomaly instance masks.
+          </p>
+          <p>
+            Our approach centers on an out-of-distribution segmentation model for identifying uncertain regions and a strong generalist segmentation model for anomaly instances segmentation.
+            We investigate ways to use uncertain regions to guide such a segmentation model to perform segmentation of anomalous instances.
+            By incorporating strong object priors from a generalist model we additionally improve the per-pixel anomaly segmentation performance.
+          </p>
+          <p>
+            Our approach outperforms current pixel-level anomaly segmentation methods, 
+            achieving an AP of 80.08% and 88.98% on the Fishyscapes Lost and Found and the RoadAnomaly validation sets respectively.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{nekrasov2023ugains,
+  author    = {Nekrasov, Alexey and Hermans, Alexander and Kuhnert, Lars and Leibe, Bastian},
+  title     = {{UGainS: Uncertainty Guided Anomaly Instance Segmentation}},
+  journal   = {GCPR},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/kumuji" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+           This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+           We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
