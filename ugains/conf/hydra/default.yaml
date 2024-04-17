@@ -1,0 +1,8 @@
+# output paths for hydra logs
+job:
+  chdir: true
+run:
+  dir: logs/${experiment}/${now:%Y%m%d_%H%M%S}_${description} #${now:%Y-%m-%d_%H:%M:%S}
+sweep:
+  dir: logs/multiruns/${now:%Y-%m-%d_%H-%M-%S}
+  subdir: ${hydra.job.num}

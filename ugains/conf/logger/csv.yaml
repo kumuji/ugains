@@ -1,0 +1,6 @@
+csv:
+  _target_: pytorch_lightning.loggers.CSVLogger
+  save_dir: ${work_dir}/${hydra:run.dir}
+  name: csv/
+  version: null
+  prefix: ""

@@ -1,0 +1,15 @@
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "val_miou"
+  save_last: True
+  save_top_k: 1
+  mode: max
+  filename: "{epoch}_val_miou_{val_miou:0.2f}"
+  every_n_epochs: 1
+  verbose: True
+  dirpath: ${work_dir}/${hydra:run.dir}/checkpoints/
+  auto_insert_metric_name: False
+
+learning_rate_monitor:
+  _target_: pytorch_lightning.callbacks.LearningRateMonitor
+  logging_interval: step

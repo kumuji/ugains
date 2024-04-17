@@ -1,0 +1,20 @@
+_target_: ugains.models.sam_sampling.Segmentation
+_recursive_: false
+
+model_config:
+  sampling_method: "fps"
+  ignore_mask: ${data_dir}/ignore_mask.pth
+  nms_thresh: 0.7
+  automask: False
+  minimal_uncert_value_instead_zero: -1.
+  uncertainty_thresh: -0.15
+  num_samples: 50
+  visualize: False
+  sam_checkpoint: ${data_dir}/sam_vit_h_4b8939.pth
+  model_path: ${data_dir}/rude0fhk.ckpt
+
+# UNCERTAINTY_PATH = ["baselines/densehybrid", -5]
+# UNCERTAINTY_PATH = ["baselines/mahalanobis", 100]
+# UNCERTAINTY_PATH = ["baselines/max_entropy", 1.0]
+# UNCERTAINTY_PATH = ["baselines/max_softmax", 0.1]
+# UNCERTAINTY_PATH = ["baselines/nls", -0.15]

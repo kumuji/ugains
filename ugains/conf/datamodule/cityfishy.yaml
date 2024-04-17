@@ -1,0 +1,31 @@
+_target_: ugains.datamodules.cityfishy_datamodule.CityFishyDataModule
+
+mode: lost_found # static
+fishyscapes_data_root: ${data_dir}/fs_lost_found
+cityscapes_data_root: ${data_dir}/cityscapes
+fishy_mode: "*" # could be also "test"
+
+# options: semantic, instance, semantic_mask, instance_mask
+# when using both semantic and instance mask - it will give panoptic masks
+target_type:
+  - semantic_mask
+
+void_masks: False
+train_batch_size: 2
+train_num_workers: 4
+train_pin_memory: False
+train_image_size: # it will crop image and apply same augs as detectron2
+  - 512
+  - 1024
+
+validation_batch_size: 2
+validation_num_workers: 2
+validation_pin_memory: False
+validation_image_size:
+  - 1024
+  - 2048
+
+num_classes: 19
+ignore_label: 255
+
+mean_std: [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]] # mask2former

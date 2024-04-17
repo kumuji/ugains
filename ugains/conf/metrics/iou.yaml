@@ -1,0 +1,12 @@
+iou:
+  _target_: ugains.metrics.iou_metrics.IoU
+  num_classes: ${datamodule.num_classes}
+  ignore_label: ${datamodule.ignore_label}
+
+ood:
+  _target_: ugains.metrics.ood.OODMetrics
+  ignore_label: ${datamodule.ignore_label}
+
+instance:
+  _target_: ugains.metrics.instance.CityscapesInstanceEvaluator
+  data_dir: ${data_dir}/fs_lost_found_instance

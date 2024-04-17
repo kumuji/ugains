@@ -1,0 +1,18 @@
+_target_: ugains.models.mask2former.maskformer_loss.SetCriterion
+num_classes: ${datamodule.num_classes}
+matcher:
+  _target_: ugains.models.mask2former.matcher.HungarianMatcher
+  cost_class:  2.0
+  cost_mask: 5.0
+  cost_dice: 5.0
+  num_points: 12544
+losses: ["labels", "masks"]
+num_points: 12544 # 12544
+oversample_ratio: 3.0
+importance_sample_ratio: 0.75
+eos_coef: 0.1
+ignore_index: 254
+weight_dict:
+  loss_ce:  2.0
+  loss_mask: 5.0
+  loss_dice: 5.0

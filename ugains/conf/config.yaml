@@ -1,0 +1,29 @@
+seed: null
+checkpoint: null # continue with weights
+
+project_name: ugains
+workspace: nekrasov
+experiment: ???
+description: ""
+tags: null
+
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/data/
+test_after_training: false
+strict_weights_loading: true
+
+defaults:
+  - _self_
+  - datamodule: cityfishy
+  - logger:
+     - wandb
+     - csv
+  - model: sam_sampling
+  - optimizer: adamw
+  - scheduler: constant
+  - trainer: default
+  - callbacks: callbacks
+  - loss: mask2former
+  - metrics: iou
+
+  - hydra: default

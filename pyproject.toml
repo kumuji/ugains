@@ -1,0 +1,77 @@
+[build-system]
+requires = ["poetry>=1.2"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "ugains"
+version = "0.1.0"
+description="UGainS: Uncertainty Guided Anomaly Instance Segmentation"
+authors = ["alexey <nekrasov@vision.rwth-aachen.de>"]
+readme = "README.md"
+homepage="https://github.com/kumuji/ugains"
+repository="https://github.com/kumuji/ugains"
+license = "MIT"
+classifiers=[
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.0.1"
+torchvision = "^0.15.2"
+pytorch-lightning = "^2.0.2"
+hydra-core = "^1.3.2"
+albumentations = "^1.3.0"
+python-dotenv = "^1.0.0"
+gitpython = "^3.1.31"
+matplotlib = "^3.7.1"
+numpy = "^1.24.3"
+rich = "^13.5.2"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+flake8 = "^3.8.1"
+pre-commit = "^2.4.0"
+
+[tool.poetry.extras]
+
+[tool.black]
+# https://github.com/psf/black
+line-length = 88
+target-version = ["py311"]
+exclude = "(.eggs|.git|.hg|.mypy_cache|.nox|.tox|.venv|.svn|_build|buck-out|build|dist)"
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/
+known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
+known_third_party = "nox,numpy,pytest"
+sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+include_trailing_comma = true
+default_section = "FIRSTPARTY"
+multi_line_output = 3
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
+
+[tool.nbqa.mutate]
+isort = 1
+black = 1
+pyupgrade = 1
+
+[tool.nbqa.addopts]
+pyupgrade = ["--py311-plus"]
+
+[tool.poetry.scripts]
+validate = 'ugains.__main__:validate'
+test = 'ugains.__main__:test'
+valtest = 'ugains.__main__:valtest'
