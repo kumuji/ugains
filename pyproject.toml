@@ -10,10 +10,8 @@ authors = ["alexey <nekrasov@vision.rwth-aachen.de>"]
 readme = "README.md"
 homepage="https://github.com/kumuji/ugains"
 repository="https://github.com/kumuji/ugains"
-license = "MIT"
 classifiers=[
     "Development Status :: 3 - Alpha",
-    "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
