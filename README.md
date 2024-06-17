@@ -23,6 +23,7 @@ UGainS is an approach that provides anomaly instance segmentation and per-pixel 
 * **2023-07-14**: Paper Accepted at [GCPR 2023](https://www.dagm-gcpr.de/year/2023)
 * **2023-08-03**: Paper on arXiv
 * **2024-04-18**: Code release
+* **2024-06-15**: New benchmark! [OoDIS: Anomaly Instance Segmentation Benchmark](https://vision.rwth-aachen.de/oodis)
 
 ## Code
 I took a long time to release the code, mainly because it was a lot of hacking together at the time and didn't really have a concise structure with multiple commented lines instead of having configs and hardwired paths all over the code.
