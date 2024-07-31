@@ -13,6 +13,9 @@ UGainS is an approach that provides anomaly instance segmentation and per-pixel 
 
 ![teaser](./docs/github_teaser.jpg)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ugains-uncertainty-guided-anomaly-instance/object-detection-on-oodis)](https://paperswithcode.com/sota/object-detection-on-oodis?p=ugains-uncertainty-guided-anomaly-instance)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ugains-uncertainty-guided-anomaly-instance/instance-segmentation-on-oodis)](https://paperswithcode.com/sota/instance-segmentation-on-oodis?p=ugains-uncertainty-guided-anomaly-instance)
+
 </div>
 <br><br>
 
